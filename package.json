@@ -8,7 +8,10 @@
     "start": "node dist/index.js",
     "dev": "nodemon --watch src/**/*.ts --exec ts-node -r tsconfig-paths/register src/index.ts",
     "test": "jest",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "db:create": "npx sequelize-cli db:create",
+    "db:drop": "npx sequelize-cli db:drop",
+    "db:up": "npm run db:drop && npm run db:create && npx sequelize-cli db:migrate"
   },
   "author": "",
   "license": "ISC",
