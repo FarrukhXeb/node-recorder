@@ -62,7 +62,8 @@ class SocketIOService {
         this.recordingSessions.delete(recordingSession);
         logger.info(`Client ${socket.id} left recording session ${recordingSession}`);
         try {
-          await combineChunks(recordingSession);
+          const file = await combineChunks(recordingSession);
+          await convertToMp4(file, recordingSession);
         } catch (error) {
           logger.error(`Error combining chunks: ${error}`);
         }

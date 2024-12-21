@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import sequelize from '@/lib/sequelize';
 import User from './user.model';
 
-type TodoStatus = 'pendiong' | 'in-progress' | 'completed';
+type TodoStatus = 'pending' | 'in-progress' | 'completed';
 
 interface TodoAttributes {
   id: string;
